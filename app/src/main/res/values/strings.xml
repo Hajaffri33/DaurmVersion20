@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Daurm</string>
+    <string name="login_as">Login as</string>
+    <string name="teacher">Teacher</string>
+    <string name="student">Student</string>
+    <string name="blur">blur</string>
+    <string name="teacher_login">Teacher Login</string>
+    <string name="t_login">Login</string>
+    <string name="tl_email">Email</string>
+    <string name="don_t_have_account">Don\'t have account?</string>
+    <string name="goto_sign_up">Sign up</string>
+    <string name="tl_password">Password</string>
+    <string name="teacher_signup">Teacher Signup</string>
+    <string name="ts_name">Name</string>
+    <string name="ts_email">Email</string>
+    <string name="ts_password">Password</string>
+    <string name="ts_cpassword">confirm Password</string>
+    <string name="ts_department">Department</string>
+    <string name="t_sign_up">Sign up</string>
+    <string name="student_login">Student Login</string>
+    <string name="sl_roll_number">Roll Number</string>
+    <string name="sl_password">Password</string>
+    <string name="aass_student_signup">Student Signup</string>
+    <string name="ss_name">Name</string>
+    <string name="ss_roll_number">Roll Number</string>
+    <string name="ss_password">Password</string>
+    <string name="ss_confirm_password">Confirm Password</string>
+    <string name="ss_department">Department</string>
+    <string name="teacher_panel">Teacher Panel</string>
+    <string name="lock_panel">Lock Panel</string>
+    <string name="lock1">Lock</string>
+    <string name="unlock1">Unlock</string>
+    <string name="lock2">Lock</string>
+    <string name="unlock2">Unlock</string>
+    <string name="lock3">Lock</string>
+    <string name="unlock3">Unlock</string>
+    <string name="room_1">Room 1</string>
+    <string name="room_2">Room 2</string>
+    <string name="room_3">Room 3</string>
+    <string name="todo">TODO</string>
+
+
+    <array name="dept">
+        <item>Information Technology</item>
+        <item>Computer Science</item>
+        <item>Software Engineering</item>
+
+
+    </array>
+
+</resources>

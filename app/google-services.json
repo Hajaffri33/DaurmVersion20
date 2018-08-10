@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "617099598266",
+    "firebase_url": "https://daurmversion20.firebaseio.com",
+    "project_id": "daurmversion20",
+    "storage_bucket": "daurmversion20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617099598266:android:2bf56c459b9c1610",
+        "android_client_info": {
+          "package_name": "com.hextogen.daurm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617099598266-vpd81jifuunn38himv6v6c8r2bf8co88.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hextogen.daurm",
+            "certificate_hash": "0a747f6b4ae7526bc31e09f7281369805d35a090"
+          }
+        },
+        {
+          "client_id": "617099598266-hf8f7bsacchus44cb643art4sels9f2u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQt5Pj2zlkrN-cOgR6mTR4uZd8e9A9oJE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617099598266-hf8f7bsacchus44cb643art4sels9f2u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:height="60dp"
+        android:width="75dp">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="#C9FBFA"/>
+
+        </shape>
+    </item>
+    <item  android:height="50dp" android:width="50dp"
+        android:gravity="right"
+        android:drawable="@drawable/ic_access_time_black_24dp"/>
+</layer-list>
