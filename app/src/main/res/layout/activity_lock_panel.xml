@@ -1,9 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".Lock_panel">
 
-</android.support.constraint.ConstraintLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/blur"
+        app:srcCompat="@drawable/blur" />
+
+    <TextView
+        android:id="@+id/lock_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/lock_panel"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/lock1_on"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="329dp"
+        android:layout_marginStart="81dp"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Unlock"
+        android:layout_marginLeft="81dp"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:id="@+id/lock1_off"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/lock2_off"
+        android:layout_alignTop="@+id/lock1_on"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Lock"
+        android:layout_alignLeft="@+id/lock2_off" />
+
+    <Button
+        android:id="@+id/lock2_on"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/lock1_on"
+        android:layout_marginBottom="204dp"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Unlock"
+        android:layout_alignLeft="@+id/lock1_on" />
+
+    <Button
+        android:id="@+id/lock2_off"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/lock2_on"
+        android:layout_marginEnd="53dp"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Lock"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="53dp" />
+
+    <Button
+        android:id="@+id/lock3_on"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/lock1_on"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Unlock"
+        android:layout_alignLeft="@+id/lock1_on" />
+
+    <Button
+        android:id="@+id/lock3_off"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/lock2_off"
+        android:layout_alignTop="@+id/lock3_on"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Lock"
+        android:layout_alignLeft="@+id/lock2_off" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/lock1_on"
+        android:layout_marginTop="323dp"
+        android:text="LR-301 is LOCKED"
+        android:textColor="#C9FBFA"
+        android:textSize="14sp"
+        android:layout_alignLeft="@+id/lock1_on" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/lock1_on"
+        android:layout_marginBottom="273dp"
+        android:text="LR-302 is LOCKED"
+        android:textColor="#C9FBFA"
+        android:textSize="14sp"
+        android:layout_alignLeft="@+id/lock1_on" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/lock1_on"
+        android:layout_marginBottom="148dp"
+        android:text="LR-303 is LOCKED"
+        android:textColor="#C9FBFA"
+        android:textSize="14sp"
+        android:layout_alignLeft="@+id/lock1_on" />
+
+
+
+
+</RelativeLayout>
