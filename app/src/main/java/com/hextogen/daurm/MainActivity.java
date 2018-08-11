@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoTeacher(View view) {
 
-        //startActivity(new Intent(MainActivity.this, teacher_loginn.class));
+     startActivity(new Intent(MainActivity.this, teacher_loginn.class));
 
     }
 
 
     public void gotoStudent(View view) {
 
-       // startActivity(new Intent(MainActivity.this, student_login.class));
+        startActivity(new Intent(MainActivity.this, student_login.class));
     }
 }

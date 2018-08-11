@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".teacher_panel">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/blur"
+        app:srcCompat="@drawable/blur" />
+    .
+
+    <TextView
+        android:id="@+id/teacher_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="199dp"
+        android:text="@string/teacher_panel"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/time_table"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="301dp"
+        android:layout_marginStart="83dp"
+        android:background="@drawable/custom_btn_bg"
+        android:drawableStart="@drawable/ic_timetable"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="83dp"
+        android:drawableLeft="@drawable/ic_timetable" />
+
+    <Button
+        android:id="@+id/ongoing_session"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/time_table"
+        android:layout_marginEnd="83dp"
+        android:background="@drawable/custom_btn_bg"
+        android:layout_alignParentRight="true"
+        android:drawableLeft="@drawable/ic_ongoin_session"
+        android:layout_marginRight="83dp" />
+
+    <Button
+        android:id="@+id/next_session"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/time_table"
+        android:layout_marginBottom="137dp"
+        android:background="@drawable/custom_btn_bg"
+        android:drawableLeft="@drawable/ic_nextsession"
+        android:layout_alignLeft="@+id/time_table" />
+
+    <Button
+        android:id="@+id/control"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/ongoing_session"
+        android:layout_alignTop="@+id/next_session"
+        android:background="@drawable/custom_btn_bg"
+        android:drawableLeft="@drawable/ic_control"
+        android:layout_alignLeft="@+id/ongoing_session"
+        android:onClick="gotoLock"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="272dp"
+        android:layout_marginStart="99dp"
+        android:text="TimeTable"
+        android:textColor="#C9FBFA"
+        android:textSize="16sp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="99dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_marginEnd="69dp"
+        android:text="Ongoing Session"
+        android:textColor="#C9FBFA"
+        android:textSize="16sp"
+        android:layout_marginRight="69dp"
+        android:layout_alignParentRight="true" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/time_table"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="107dp"
+        android:text="Next Session"
+        android:textColor="#C9FBFA"
+        android:textSize="16sp"
+        android:layout_alignRight="@+id/time_table" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_marginEnd="105dp"
+        android:text="Control"
+        android:textColor="#C9FBFA"
+        android:textSize="16sp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="105dp" />
+
+    <Button
+        android:id="@+id/panel_signout"
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginStart="-105dp"
+        android:layout_toEndOf="@+id/textView8"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Sign out"
+        android:textSize="12sp"
+        android:layout_marginLeft="-105dp"
+        android:layout_toRightOf="@+id/textView8" />
+
+
+</RelativeLayout>
