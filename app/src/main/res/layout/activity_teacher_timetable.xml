@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".teacher_panel">
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="59dp"
+        android:text="Operating System"
+        android:textColor="#C9FBFA"
+        android:textSize="22sp"
+        android:layout_marginLeft="17dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView10"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginBottom="-114dp"
+        android:text="BS-IT 14 B"
+        android:textColor="#C9FBFA"
+        android:textSize="20sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="114dp"
+        android:text="Slot1"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_marginTop="178dp"
+        android:text="Multimedia Systems"
+        android:textColor="#C9FBFA"
+        android:textSize="22sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView11"
+        android:text="BS-CS 15"
+        android:textColor="#C9FBFA"
+        android:textSize="20sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView12"
+        android:text="Slot 3"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_centerVertical="true"
+        android:text="Advance Web Development 2"
+        android:textColor="#C9FBFA"
+        android:textSize="22sp"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView14"
+        android:text="TextView"
+        android:textColor="#C9FBFA"
+        android:textSize="20sp"
+        tools:text="BS-IT 14 B"
+        android:layout_alignLeft="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView7"
+        android:layout_below="@+id/textView15"
+        android:text="TextView"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp"
+        tools:text="Slot 1"
+        android:layout_alignLeft="@+id/textView7" />
+
+</RelativeLayout>

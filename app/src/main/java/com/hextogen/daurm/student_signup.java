@@ -143,7 +143,7 @@ public class student_signup extends AppCompatActivity {
         String depart  = spinner.getSelectedItem().toString();
 
         student_db_values student = new student_db_values(id, name, rolln, email, passw ,depart);
-        studentdb.child(id).setValue(studentdb);
+        studentdb.child(id).setValue(student);
 
     }
 

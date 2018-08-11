@@ -24,7 +24,8 @@
         <activity android:name=".door1" />
         <activity android:name=".door2" />
         <activity android:name=".door3" />
-        <activity android:name=".student_panel"></activity>
+        <activity android:name=".student_panel" />
+        <activity android:name=".teacher_timetable"></activity>
     </application>
 
 </manifest>
