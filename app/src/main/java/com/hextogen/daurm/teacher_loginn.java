@@ -87,10 +87,6 @@ public class teacher_loginn extends AppCompatActivity {
     }
 
 
-    public void gotoTeacherSignup(View view) {
-
-       // startActivity(new Intent(teacher_loginn.this, teacher_signup.class));
-    }
 
     public boolean emailValidator(String email)
     {
