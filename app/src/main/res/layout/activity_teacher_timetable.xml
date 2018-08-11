@@ -17,7 +17,6 @@
         android:layout_alignParentTop="true"
         android:contentDescription="@string/blur"
         app:srcCompat="@drawable/blur" />
-    .
 
     <TextView
         android:id="@+id/TimeTable"
@@ -25,8 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="195dp"
-        android:text="@string/teacher_panel"
+        android:layout_marginTop="224dp"
+        android:text="Time Table"
         android:textColor="#C9FBFA"
         android:textSize="18sp" />
 
@@ -36,11 +35,11 @@
         android:layout_height="100dp"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imageView"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="86dp"
         android:background="@drawable/custom_btn_bg"
         android:text="Monday"
-        android:layout_marginLeft="75dp"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="86dp" />
 
     <Button
         android:id="@+id/tuesday"
@@ -48,11 +47,11 @@
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/imageView"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="79dp"
         android:background="@drawable/custom_btn_bg"
         android:text="Tuesday"
-        android:layout_marginRight="70dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="79dp" />
 
     <Button
         android:id="@+id/wednesday"

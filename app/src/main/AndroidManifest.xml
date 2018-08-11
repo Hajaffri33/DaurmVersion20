@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Splash"
+        <activity
+            android:name=".Splash"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +27,8 @@
         <activity android:name=".door2" />
         <activity android:name=".door3" />
         <activity android:name=".student_panel" />
-        <activity android:name=".teacher_timetable"></activity>
+        <activity android:name=".teacher_timetable" />
+        <activity android:name=".teacher_signup"></activity>
     </application>
 
 </manifest>

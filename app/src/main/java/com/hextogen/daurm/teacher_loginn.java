@@ -1,9 +1,9 @@
 package com.hextogen.daurm;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -22,6 +22,7 @@ public class teacher_loginn extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     EditText email, password;
+    boolean firstStart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ public class teacher_loginn extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(teacher_loginn.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
+
                                 startActivity(new Intent(teacher_loginn.this, teacher_panel.class));
                                 finish();
                             } else {
