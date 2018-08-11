@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".door1">
+    tools:context=".door3">
 
     <ImageView
         android:id="@+id/imageView"
@@ -23,21 +23,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:text="LR - 301"
+        android:text="LR - 303"
         android:textColor="#C9FBFA"
         android:textSize="26sp" />
 
     <Button
-        android:id="@+id/lock1_on"
+        android:id="@+id/lock3_on"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/lock3_off"
         android:layout_marginEnd="71dp"
-        android:background="@drawable/custom_btn_bg"
-        android:text="Unlock"
         android:layout_marginRight="71dp"
-        android:layout_alignParentRight="true" />
+        android:background="@drawable/custom_btn_bg"
+        android:text="Unlock" />
 
     <Button
         android:id="@+id/lock3_off"

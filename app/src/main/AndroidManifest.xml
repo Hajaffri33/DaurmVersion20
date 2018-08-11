@@ -23,7 +23,9 @@
         <activity android:name=".teacher_panel" />
         <activity android:name=".student_login" />
         <activity android:name=".student_signup" />
-        <activity android:name=".door1"></activity>
+        <activity android:name=".door1" />
+        <activity android:name=".door2" />
+        <activity android:name=".door3"></activity>
     </application>
 
 </manifest>

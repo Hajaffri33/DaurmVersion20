@@ -11,44 +11,43 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class door1 extends AppCompatActivity {
+public class door3 extends AppCompatActivity {
 
 
-    Button btn1, btn2;
-    TextView text1;
+    Button btn1, btn2, btn3, btn4, btn5, btn6;
+    TextView text1,text2,text3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_door1);
+        setContentView(R.layout.activity_door3);
 
-        btn1 = findViewById(R.id.lock1_on);
-        btn2 = findViewById(R.id.lock3_off);
+
+        btn5 = findViewById(R.id.lock3_on);
+        btn6 = findViewById(R.id.lock3_off);
         text1 = findViewById(R.id.textView5);
 
-        btn1.setOnClickListener(new View.OnClickListener()
+
+        btn5.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
 
-                request("/LOCK1=Locked");
-                text1.setText("LR-301 is UNLOCKED");
-
+                request("/LOCK3=Locked");
+                text3.setText("UNLOCKED");
 
             }
         });
-        btn2.setOnClickListener(new View.OnClickListener()
+        btn6.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
 
-                request("/LOCK1=Unlocked");
-                text1.setText("LR-301 is LOCKED");
+                request("/LOCK3=Unlocked");
+
+                text3.setText("LOCKED");
 
             }
         });
-
-
-
 
     }
 
@@ -65,11 +64,9 @@ public class door1 extends AppCompatActivity {
             new RequestedData().execute(url+command);
         }
         else{
-            Toast.makeText(door1.this,"No connection detected", Toast.LENGTH_LONG).show();
+            Toast.makeText(door3.this,"No connection detected", Toast.LENGTH_LONG).show();
         }
     }
-
-
 
     private class RequestedData extends AsyncTask<String, Void, String> {
 
