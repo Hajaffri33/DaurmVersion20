@@ -65,8 +65,8 @@ public class student_login extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(student_login.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
-                           //     startActivity(new Intent(student_login.this, student_panel.class));
-                              //  finish();
+                               startActivity(new Intent(student_login.this, student_panel.class));
+                               finish();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.e("login", "signInWithEmail:failure", task.getException());

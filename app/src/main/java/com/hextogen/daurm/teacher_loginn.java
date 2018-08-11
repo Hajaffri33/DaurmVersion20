@@ -70,8 +70,11 @@ public class teacher_loginn extends AppCompatActivity {
                                 Toast.makeText(teacher_loginn.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
 
-                                startActivity(new Intent(teacher_loginn.this, teacher_panel.class));
+                                startActivity(new Intent(teacher_loginn.this, teacher_signup.class));
                                 finish();
+
+
+
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.e("login", "signInWithEmail:failure", task.getException());
