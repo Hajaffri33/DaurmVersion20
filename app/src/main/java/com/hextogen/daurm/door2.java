@@ -33,7 +33,7 @@ public class door2 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK2=Locked");
-                text2.setText("UNLOCKED");
+                text1.setText("UNLOCKED");
 
 
             }
@@ -44,7 +44,7 @@ public class door2 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK2=Unlocked");
-                text2.setText("LOCKED");
+                text1.setText("LOCKED");
 
 
             }

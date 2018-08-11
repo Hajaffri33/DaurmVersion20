@@ -33,7 +33,7 @@ public class door3 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK3=Locked");
-                text3.setText("UNLOCKED");
+                text1.setText("UNLOCKED");
 
             }
         });
@@ -44,7 +44,7 @@ public class door3 extends AppCompatActivity {
 
                 request("/LOCK3=Unlocked");
 
-                text3.setText("LOCKED");
+                text1.setText("LOCKED");
 
             }
         });
