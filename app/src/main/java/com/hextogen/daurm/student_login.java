@@ -22,13 +22,14 @@ public class student_login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     EditText email, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_login);
-        mAuth     = FirebaseAuth.getInstance();
-        email     = findViewById(R.id.sl_email);
-        password  = findViewById(R.id.sl_pass);
+        mAuth = FirebaseAuth.getInstance();
+        email = findViewById(R.id.sl_email);
+        password = findViewById(R.id.sl_pass);
 
     }
 
@@ -37,27 +38,20 @@ public class student_login extends AppCompatActivity {
         String mail = email.getText().toString();
         String pass = password.getText().toString();
 
-        if(mail.length()==0||pass.length()==0){
+        if (mail.length() == 0 || pass.length() == 0) {
 
-            Toast.makeText(student_login.this,"Enter in all fields", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()<8){
+            Toast.makeText(student_login.this, "Enter in all fields", Toast.LENGTH_SHORT).show();
+        } else if (pass.length() < 8) {
 
             Toast.makeText(student_login.this, "Password must be minimum 8 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()>32){
+        } else if (pass.length() > 32) {
 
             Toast.makeText(student_login.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if(emailValidator(mail)==true){
+        } else if (emailValidator(mail) == true) {
             Toast.makeText(student_login.this, "Domain must be different than @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
-        }
-
-        else if(emailValidator2(mail)!=true){
+        } else if (emailValidator2(mail) != true) {
             Toast.makeText(student_login.this, "Enter valid email address", Toast.LENGTH_SHORT).show();
-        }
-
-        else{
+        } else {
             mAuth.signInWithEmailAndPassword(mail, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -68,8 +62,8 @@ public class student_login extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(student_login.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
-                               startActivity(new Intent(student_login.this, student_panel.class));
-                               finish();
+                                startActivity(new Intent(student_login.this, student_panel.class));
+                                finish();
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.e("login", "signInWithEmail:failure", task.getException());
@@ -87,13 +81,9 @@ public class student_login extends AppCompatActivity {
     }
 
 
-
-
-
-
     public void gotoStdudentSignup(View view) {
 
-       startActivity(new Intent(student_login.this, student_signup.class));
+        startActivity(new Intent(student_login.this, student_signup.class));
 
     }
 
@@ -103,7 +93,7 @@ public class student_login extends AppCompatActivity {
 
         Pattern pattern;
         Matcher matcher;
-        final String EMAIL_PATTERN =   "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})" ;
+        final String EMAIL_PATTERN = "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})";
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
         return matcher.matches();
@@ -111,8 +101,7 @@ public class student_login extends AppCompatActivity {
 
     }
 
-    public boolean emailValidator(String email)
-    {
+    public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@uogsialkot.edu.pk";

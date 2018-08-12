@@ -60,7 +60,7 @@ public class door1 extends AppCompatActivity {
 
         if(networkInfo != null && networkInfo.isConnected()){
 
-            String url = "http://192.168.1.105/";
+            String url = "http://192.168.1.100/";
 
             new RequestedData().execute(url+command);
         }

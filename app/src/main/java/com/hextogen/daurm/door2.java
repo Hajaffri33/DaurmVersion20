@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class door2 extends AppCompatActivity {
 
 
-    Button btn1, btn2, btn3, btn4, btn5, btn6;
+    Button  btn3, btn4;
     TextView text1,text2,text3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class door2 extends AppCompatActivity {
 
         if(networkInfo != null && networkInfo.isConnected()){
 
-            String url = "http://192.168.1.105/";
+            String url = "http://192.168.1.100/";
 
             new RequestedData().execute(url+command);
         }
