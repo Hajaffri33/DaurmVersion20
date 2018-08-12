@@ -15,6 +15,7 @@ public class teacher_panel extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Button signout;
+    Button time_table;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +23,15 @@ public class teacher_panel extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         signout = findViewById(R.id.panel_signout);
+        time_table=findViewById(R.id.time_table);
+        time_table.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(teacher_panel.this,teacher_timetable.class));
+
+            }
+        });
+
 
         signout.setOnClickListener(new View.OnClickListener() {
             @Override

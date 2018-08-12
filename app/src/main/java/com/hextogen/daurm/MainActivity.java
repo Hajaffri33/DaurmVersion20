@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, teacher_panel.class));
         } else {
 
-            // njsdbv
         }
 
 
