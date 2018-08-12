@@ -20,13 +20,10 @@ import java.util.regex.Pattern;
 
 public class teacher_loginn extends AppCompatActivity {
 
-    String user1="talhaarshad@uogsialkot.edu.pk";
-            String user2="asifkhan@uogsialkot.edu.pk";
-    String user3="faizanarshad@uogsialkot.edu.pk";
+
 
     private FirebaseAuth mAuth;
     EditText email, password;
-    boolean firstStart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +32,7 @@ public class teacher_loginn extends AppCompatActivity {
         mAuth.getCurrentUser();
         email     = findViewById(R.id.t_login);
         password  = findViewById(R.id.tl_pass);
+
 
 
     }
@@ -79,7 +77,7 @@ public class teacher_loginn extends AppCompatActivity {
 
                                 startActivity(new Intent(teacher_loginn.this, teacher_info.class));
                                 finish();
-                                //add teacher panel here later (teacher 1 or 2 or 3)
+
 
 
                             } else {

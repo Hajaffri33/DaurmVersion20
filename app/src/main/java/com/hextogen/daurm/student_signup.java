@@ -62,15 +62,15 @@ public class student_signup extends AppCompatActivity {
             Toast.makeText(this,"Enter in all fields", Toast.LENGTH_SHORT).show();
         }
 
-        if(emailValidator(email)==true){
+        else if(emailValidator(email)==true){
             Toast.makeText(student_signup.this, "Domain must be different than @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
         }
 
-        if(emailValidator2(email)!=true){
+        else if(emailValidator2(email)!=true){
             Toast.makeText(student_signup.this, "Enter valid email address", Toast.LENGTH_SHORT).show();
         }
 
-        if(rollnumberValidator(rolln)!=true){
+        else if(rollnumberValidator(rolln)!=true){
 
             Toast.makeText(student_signup.this, "Enter Valid Roll number", Toast.LENGTH_SHORT).show();
         }
@@ -157,7 +157,6 @@ public class student_signup extends AppCompatActivity {
         String name    = sname.getText().toString();
         String rolln   = rnum.getText().toString();
         String passw   = pass.getText().toString();
-        String cpassw  = cpass.getText().toString();
         String depart  = spinner.getSelectedItem().toString();
 
         student_db_values student = new student_db_values(id, name, rolln, email, passw ,depart);
