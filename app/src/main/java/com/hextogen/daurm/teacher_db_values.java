@@ -40,4 +40,28 @@ public class teacher_db_values {
     }
 
     public String getDesig(){ return desig; }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setT_name(String t_name) {
+        this.t_name = t_name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+
+    public void setDesig(String desig) {
+        this.desig = desig;
+    }
 }
