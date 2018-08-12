@@ -16,7 +16,6 @@
         android:layout_alignParentTop="true"
         android:contentDescription="@string/blur"
         app:srcCompat="@drawable/blur" />
-    .
 
     <TextView
         android:id="@+id/teacher_panel"
