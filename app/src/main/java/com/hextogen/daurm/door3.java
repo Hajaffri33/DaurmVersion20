@@ -14,8 +14,8 @@ import android.widget.Toast;
 public class door3 extends AppCompatActivity {
 
 
-    Button btn1, btn2, btn3, btn4, btn5, btn6;
-    TextView text1,text2,text3;
+    Button  btn5, btn6;
+    TextView text1,text2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
