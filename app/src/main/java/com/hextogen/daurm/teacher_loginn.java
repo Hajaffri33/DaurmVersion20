@@ -20,6 +20,10 @@ import java.util.regex.Pattern;
 
 public class teacher_loginn extends AppCompatActivity {
 
+    String user1="talhaarshad@uogsialkot.edu.pk";
+            String user2="asifkhan@uogsialkot.edu.pk";
+    String user3="faizanarshad@uogsialkot.edu.pk";
+
     private FirebaseAuth mAuth;
     EditText email, password;
     boolean firstStart;
@@ -36,12 +40,13 @@ public class teacher_loginn extends AppCompatActivity {
     }
 
 
+
     public void Login(View view) {
 
         String mail = email.getText().toString();
         String pass = password.getText().toString();
 
-        if(mail.length()==0||pass.length()==0){
+        if(mail.length()==0||pass.length()==0) {
 
             Toast.makeText(teacher_loginn.this,"Enter in all fields", Toast.LENGTH_SHORT).show();
         }
@@ -58,6 +63,8 @@ public class teacher_loginn extends AppCompatActivity {
             Toast.makeText(teacher_loginn.this, "Domain must be @uogisalkot.edu.pk", Toast.LENGTH_SHORT).show();
         }
 
+
+
         else{
             mAuth.signInWithEmailAndPassword(mail, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -72,7 +79,7 @@ public class teacher_loginn extends AppCompatActivity {
 
                                 startActivity(new Intent(teacher_loginn.this, teacher_signup.class));
                                 finish();
-
+                                //add teacher panel here later (teacher 1 or 2 or 3)
 
 
                             } else {
