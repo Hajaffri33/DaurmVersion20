@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class teacher_panel extends AppCompatActivity {
 
@@ -37,7 +39,22 @@ public class teacher_panel extends AppCompatActivity {
 
     public void gotoLock(View view) {
 
-       // startActivity(new Intent(teacher_panel.this, lock_panel.class));
+        FirebaseUser user  =  FirebaseAuth.getInstance().getCurrentUser();
+        String email =   user.getEmail();
+
+        if(email=="ad@uogsialkot.edu.pk"){
+
+            startActivity(new Intent(teacher_panel.this, door1.class));
+        }
+
+        else{
+
+            Toast.makeText(this, "Not your class", Toast.LENGTH_SHORT).show();
+        }
+
+
+
+       //
 
     }
 
