@@ -39,14 +39,28 @@ public class teacher_panel extends AppCompatActivity {
 
     public void gotoLock(View view) {
 
-        FirebaseUser user  =  FirebaseAuth.getInstance().getCurrentUser();
-        String email =   user.getEmail();
 
-        if(email=="ad@uogsialkot.edu.pk"){
+
+        FirebaseUser user =FirebaseAuth.getInstance().getCurrentUser();
+        String mail1  = "asifkhan@uogsialkot.edu.pk" ;
+        String mail2  = "ad@uogsialkot.edu.pk" ;
+        String mail3  = "faizanarshad@uogsialkot.edu.pk" ;
+        String email = user.getEmail();
+
+
+
+        if(email.equals(mail1)){
 
             startActivity(new Intent(teacher_panel.this, door1.class));
         }
+        else if(email.equals(mail2)){
 
+            startActivity(new Intent(teacher_panel.this, door2.class));
+        }
+        else if(email.equals(mail3)){
+
+            startActivity(new Intent(teacher_panel.this, door3.class));
+        }
         else{
 
             Toast.makeText(this, "Not your class", Toast.LENGTH_SHORT).show();
