@@ -25,9 +25,10 @@ public class student_signup extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
-    EditText sname,mail, rnum, pass, cpass, dept;
+    EditText sname, mail, rnum, pass, cpass, dept;
     Spinner spinner;
     DatabaseReference studentdb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +37,10 @@ public class student_signup extends AppCompatActivity {
 
         studentdb = FirebaseDatabase.getInstance().getReference("student");
 
-        mail  = findViewById(R.id.ss_email);
+        mail = findViewById(R.id.ss_email);
         sname = findViewById(R.id.ss_name);
-        rnum  = findViewById(R.id.ss_rollnumber);
-        pass  = findViewById(R.id.ss_pass);
+        rnum = findViewById(R.id.ss_rollnumber);
+        pass = findViewById(R.id.ss_pass);
         cpass = findViewById(R.id.ss_cpass);
         spinner = findViewById(R.id.ss_spinner);
 
@@ -48,47 +49,35 @@ public class student_signup extends AppCompatActivity {
     public void createAccount(View view) {
 
 
-        String email   = mail.getText().toString();
-        String name    = sname.getText().toString();
-        String rolln   = rnum.getText().toString();
-        String passw   = pass.getText().toString();
-        String cpassw  = cpass.getText().toString();
-        String depart  = spinner.getSelectedItem().toString();
+        String email = mail.getText().toString();
+        String name = sname.getText().toString();
+        String rolln = rnum.getText().toString();
+        String passw = pass.getText().toString();
+        String cpassw = cpass.getText().toString();
+        String depart = spinner.getSelectedItem().toString();
 
-        if(email.length()==0&&email.length()<8||name.length()==0&&name.length()<8||
-                rolln.length()==0&&rolln.length()<8||passw.length()==0&&passw.length()<8
-                ||cpassw.length()==0&&cpassw.length()<8||depart.length()==0&&depart.length()<8){
+        if (email.length() == 0 && email.length() < 8 || name.length() == 0 && name.length() < 8 ||
+                rolln.length() == 0 && rolln.length() < 8 || passw.length() == 0 && passw.length() < 8
+                || cpassw.length() == 0 && cpassw.length() < 8 || depart.length() == 0 && depart.length() < 8) {
 
-            Toast.makeText(this,"Enter in all fields", Toast.LENGTH_SHORT).show();
-        }
-
-        else if(emailValidator(email)==true){
+            Toast.makeText(this, "Enter in all fields", Toast.LENGTH_SHORT).show();
+        } else if (emailValidator(email) == true) {
             Toast.makeText(student_signup.this, "Domain must be different than @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
-        }
-
-        else if(emailValidator2(email)!=true){
+        } else if (emailValidator2(email) != true) {
             Toast.makeText(student_signup.this, "Enter valid email address", Toast.LENGTH_SHORT).show();
-        }
-
-        else if(rollnumberValidator(rolln)!=true){
+        } else if (rollnumberValidator(rolln) != true) {
 
             Toast.makeText(student_signup.this, "Enter Valid Roll number", Toast.LENGTH_SHORT).show();
-        }
+        } else if (passw.equals(cpassw) != true) {
 
-        else  if(passw.equals(cpassw)!=true){
-
-            Toast.makeText(this,"Passwords do not match", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()<8){
+            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+        } else if (pass.length() < 8) {
 
             Toast.makeText(student_signup.this, "Password must be minimum 8 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()>32){
+        } else if (pass.length() > 32) {
 
             Toast.makeText(student_signup.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
-        }
-
-        else{
+        } else {
 
             mAuth.createUserWithEmailAndPassword(email, passw)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -123,7 +112,7 @@ public class student_signup extends AppCompatActivity {
 
         Pattern pattern;
         Matcher matcher;
-        final String EMAIL_PATTERN =   "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})" ;
+        final String EMAIL_PATTERN = "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})";
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
         return matcher.matches();
@@ -133,15 +122,14 @@ public class student_signup extends AppCompatActivity {
 
     private boolean rollnumberValidator(String rolln) {
 
-        if(rolln.length()==11){
+        if (rolln.length() == 11) {
             return true;
-        }
-        else
+        } else
 
             return false;
     }
-    public boolean emailValidator(String email)
-    {
+
+    public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@uogsialkot.edu.pk";
@@ -150,16 +138,16 @@ public class student_signup extends AppCompatActivity {
         return matcher.matches();
     }
 
-    private void addStudent(){
+    private void addStudent() {
 
         String id = studentdb.push().getKey();
-        String email   = mail.getText().toString();
-        String name    = sname.getText().toString();
-        String rolln   = rnum.getText().toString();
-        String passw   = pass.getText().toString();
-        String depart  = spinner.getSelectedItem().toString();
+        String email = mail.getText().toString();
+        String name = sname.getText().toString();
+        String rolln = rnum.getText().toString();
+        String passw = pass.getText().toString();
+        String depart = spinner.getSelectedItem().toString();
 
-        student_db_values student = new student_db_values(id, name, rolln, email, passw ,depart);
+        student_db_values student = new student_db_values(id, name, rolln, email, passw, depart);
         studentdb.child(id).setValue(student);
 
     }
