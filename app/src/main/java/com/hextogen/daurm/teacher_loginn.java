@@ -21,22 +21,20 @@ import java.util.regex.Pattern;
 public class teacher_loginn extends AppCompatActivity {
 
 
-
     private FirebaseAuth mAuth;
     EditText email, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_loginn);
-        mAuth     = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
         mAuth.getCurrentUser();
-        email     = findViewById(R.id.t_login);
-        password  = findViewById(R.id.tl_pass);
-
+        email = findViewById(R.id.t_login);
+        password = findViewById(R.id.tl_pass);
 
 
     }
-
 
 
     public void Login(View view) {
@@ -44,26 +42,19 @@ public class teacher_loginn extends AppCompatActivity {
         String mail = email.getText().toString();
         String pass = password.getText().toString();
 
-        if(mail.length()==0||pass.length()==0) {
+        if (mail.length() == 0 || pass.length() == 0) {
 
-            Toast.makeText(teacher_loginn.this,"Enter in all fields", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()<8){
+            Toast.makeText(teacher_loginn.this, "Enter in all fields", Toast.LENGTH_SHORT).show();
+        } else if (pass.length() < 8) {
 
             Toast.makeText(teacher_loginn.this, "Password must be minimum 8 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if(pass.length()>32){
+        } else if (pass.length() > 32) {
 
             Toast.makeText(teacher_loginn.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
-        }
-        else if(emailValidator(mail)!=true){
+        } else if (emailValidator(mail) != true) {
 
             Toast.makeText(teacher_loginn.this, "Domain must be @uogisalkot.edu.pk", Toast.LENGTH_SHORT).show();
-        }
-
-
-
-        else{
+        } else {
             mAuth.signInWithEmailAndPassword(mail, pass)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -77,7 +68,6 @@ public class teacher_loginn extends AppCompatActivity {
 
                                 startActivity(new Intent(teacher_loginn.this, teacher_info.class));
                                 finish();
-
 
 
                             } else {
@@ -97,9 +87,7 @@ public class teacher_loginn extends AppCompatActivity {
     }
 
 
-
-    public boolean emailValidator(String email)
-    {
+    public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@uogsialkot.edu.pk";

@@ -13,6 +13,7 @@ public class teacher_panel extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     Button signout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class teacher_panel extends AppCompatActivity {
 
     public void gotoLock(View view) {
 
-       // startActivity(new Intent(teacher_panel.this, lock_panel.class));
+        // startActivity(new Intent(teacher_panel.this, lock_panel.class));
 
     }
 
