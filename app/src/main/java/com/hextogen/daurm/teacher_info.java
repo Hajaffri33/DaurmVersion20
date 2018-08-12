@@ -112,6 +112,9 @@ public class teacher_info extends AppCompatActivity {
 
             addTeacher(mail, newPassword);
 
+            startActivity(new Intent(teacher_info.this, teacher_panel.class));
+            finish();
+
         }
     }
 
