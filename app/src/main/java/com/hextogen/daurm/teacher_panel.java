@@ -14,7 +14,6 @@ public class teacher_panel extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private  String userID;
 
     Button signout;
     TextView name;
