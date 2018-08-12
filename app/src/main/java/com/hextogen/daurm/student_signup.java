@@ -62,8 +62,12 @@ public class student_signup extends AppCompatActivity {
             Toast.makeText(this,"Enter in all fields", Toast.LENGTH_SHORT).show();
         }
 
-        if(emailValidator(email)!=true){
-            Toast.makeText(student_signup.this, "Domain must be @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
+        if(emailValidator(email)==true){
+            Toast.makeText(student_signup.this, "Domain must be different than @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
+        }
+
+        if(emailValidator2(email)!=true){
+            Toast.makeText(student_signup.this, "Enter valid email address", Toast.LENGTH_SHORT).show();
         }
 
         if(rollnumberValidator(rolln)!=true){
@@ -114,12 +118,26 @@ public class student_signup extends AppCompatActivity {
 
     }
 
+    private boolean emailValidator2(String email) {
+
+
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN =   "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})" ;
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+
+
+    }
+
     private boolean rollnumberValidator(String rolln) {
 
         if(rolln.length()==11){
             return true;
         }
         else
+
             return false;
     }
     public boolean emailValidator(String email)

@@ -16,7 +16,7 @@ public class teacher2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_panel);
+        setContentView(R.layout.teacher2);
 
         mAuth = FirebaseAuth.getInstance();
        signout = findViewById(R.id.panel_signout);

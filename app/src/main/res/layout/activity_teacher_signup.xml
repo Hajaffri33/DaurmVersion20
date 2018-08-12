@@ -5,14 +5,104 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".teacher_panel">
+    tools:context=".teacher_signup">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/blur"
+        app:srcCompat="@drawable/blur" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/teacher_sigup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Plzzzz Sign up "
-        android:textSize="28sp" />
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:text="@string/teacher_signup"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/t_name"
+        android:layout_width="312dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawableLeft="@drawable/ic_username"
+        android:ems="10"
+        android:hint="Fullname"
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_username" />
+
+    <EditText
+        android:id="@+id/ts_email"
+        android:layout_width="312dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="355dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawableLeft="@drawable/ic_email"
+        android:ems="10"
+        android:hint="@string/ts_email"
+        android:inputType="textEmailAddress"
+        android:drawableStart="@drawable/ic_email" />
+
+    <EditText
+        android:id="@+id/ts_pass"
+        android:layout_width="312dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="410dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawableLeft="@drawable/ic_password"
+        android:ems="10"
+        android:hint="@string/ts_password"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_password" />
+
+    <EditText
+        android:id="@+id/ts_cpass"
+        android:layout_width="312dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_edittext_bg"
+        android:drawableLeft="@drawable/ic_password"
+        android:layout_marginTop="465dp"
+        android:ems="10"
+        android:hint="@string/ts_cpassword"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_password" />
+
+    <Button
+        android:id="@+id/t_signup"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/custom_btn_bg"
+        android:onClick="createAccount"
+        android:text="@string/t_sign_up"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/ts_spinner"
+        android:layout_width="312dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="520dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="180dp"
+        android:background="#DCD2E0"
+        android:entries="@array/dept"
+        android:gravity="center" />
+
+
 </RelativeLayout>

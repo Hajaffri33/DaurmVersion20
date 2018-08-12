@@ -49,9 +49,12 @@ public class student_login extends AppCompatActivity {
 
             Toast.makeText(student_login.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
         }
-        else if(emailValidator(mail)!=true){
+        else if(emailValidator(mail)==true){
+            Toast.makeText(student_login.this, "Domain must be different than @uogsialkot.edu.pk", Toast.LENGTH_SHORT).show();
+        }
 
-            Toast.makeText(student_login.this, "Domain must be @uogisalkot.edu.pk", Toast.LENGTH_SHORT).show();
+        else if(emailValidator2(mail)!=true){
+            Toast.makeText(student_login.this, "Enter valid email address", Toast.LENGTH_SHORT).show();
         }
 
         else{
@@ -87,9 +90,24 @@ public class student_login extends AppCompatActivity {
 
 
 
+
     public void gotoStdudentSignup(View view) {
 
        startActivity(new Intent(student_login.this, student_signup.class));
+
+    }
+
+
+    private boolean emailValidator2(String email) {
+
+
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN =   "([\\w\\-]([\\.\\w])+[\\w]+@([\\w\\-]+\\.)+[A-Za-z]{2,4})" ;
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+
 
     }
 
