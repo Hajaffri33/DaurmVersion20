@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,18 +22,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class
-teacher_signup extends AppCompatActivity {
+public class teacher_info extends AppCompatActivity {
 
 
     private FirebaseAuth mAuth;
-    EditText tname,mail,pass,cpass;
+    EditText tname,mail,pass,cpass, designation;
     Spinner spinner;
+    TextView skipThis;
     DatabaseReference databaseTeacher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_signup);
+        setContentView(R.layout.activity_teacher_info);
 
         databaseTeacher = FirebaseDatabase.getInstance().getReference("teacher");
 
@@ -40,8 +41,10 @@ teacher_signup extends AppCompatActivity {
         mail  = findViewById(R.id.ts_email);
         pass  = findViewById(R.id.ts_pass);
         cpass = findViewById(R.id.ts_cpass);
+        designation =findViewById(R.id.designation);
 
         spinner = findViewById(R.id.ts_spinner);
+        skipThis = findViewById(R.id.skip);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -50,18 +53,19 @@ teacher_signup extends AppCompatActivity {
 
 
 
-    public void createAccount(View view) {
+    public void submit(View view) {
 
         String name    = tname.getText().toString();
         String email   = mail.getText().toString();
         String passw   = pass.getText().toString();
         String cpassw  = cpass.getText().toString();
         String depart  = spinner.getSelectedItem().toString();
+        String desig  = designation.getText().toString();
 
 
 
         if(email.length()==0&&email.length()<8||name.length()==0&&name.length()<8||passw.length()==0&&passw.length()<8
-                ||cpassw.length()==0&&cpassw.length()<8||depart.length()==0&&depart.length()<8){
+                ||cpassw.length()==0&&cpassw.length()<8||depart.length()==0&&depart.length()<8||desig.length()==0&&desig.length()<8){
 
             Toast.makeText(this,"Enter in all fields", Toast.LENGTH_SHORT).show();
         }
@@ -72,11 +76,11 @@ teacher_signup extends AppCompatActivity {
         }
         else if(pass.length()<8){
 
-            Toast.makeText(teacher_signup.this, "Password must be minimum 8 characters", Toast.LENGTH_SHORT).show();
+            Toast.makeText(teacher_info.this, "Password must be minimum 8 characters", Toast.LENGTH_SHORT).show();
         }
         else if(pass.length()>32){
 
-            Toast.makeText(teacher_signup.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
+            Toast.makeText(teacher_info.this, "Password must be maximum 32 characters", Toast.LENGTH_SHORT).show();
         }
         else  if(passw.equals(cpassw)!=true){
 
@@ -85,6 +89,11 @@ teacher_signup extends AppCompatActivity {
         else  if(depart.length()==0){
 
             Toast.makeText(this,"Select Department", Toast.LENGTH_SHORT).show();
+        }
+
+        else  if(desig.length()==0){
+
+            Toast.makeText(this,"Enter Designation", Toast.LENGTH_SHORT).show();
         }
 
         else{
@@ -96,16 +105,16 @@ teacher_signup extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.e("create", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
-                                Toast.makeText(teacher_signup.this, "Signed up Successfully",
+                                Toast.makeText(teacher_info.this, "Signed up Successfully",
                                         Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(teacher_signup.this, teacher_loginn.class));
+                                startActivity(new Intent(teacher_info.this, teacher_loginn.class));
                                 finish();
                                 addTeacher();
 
                             } else {
                                 // If sign in fails, display a message to the user.
                                 Log.e("create", "createUserWithEmail:failure", task.getException());
-                                Toast.makeText(teacher_signup.this, "Authentication failed.",
+                                Toast.makeText(teacher_info.this, "Authentication failed.",
                                         Toast.LENGTH_SHORT).show();
 
                             }
@@ -121,6 +130,9 @@ teacher_signup extends AppCompatActivity {
 
     }
 
+
+
+
     private void addTeacher(){
 
         String id = databaseTeacher.push().getKey();
@@ -129,8 +141,9 @@ teacher_signup extends AppCompatActivity {
         String passw   = pass.getText().toString();
         String cpassw  = cpass.getText().toString();
         String depart  = spinner.getSelectedItem().toString();
+        String desig   = designation.getText().toString();
 
-        teacher_db_values teacher = new teacher_db_values(id, name, email, passw ,depart);
+        teacher_db_values teacher = new teacher_db_values(id, name, email, passw ,depart, desig);
         databaseTeacher.child(id).setValue(teacher);
 
     }
@@ -144,4 +157,10 @@ teacher_signup extends AppCompatActivity {
         return matcher.matches();
     }
 
+
+    public void skip(View view) {
+
+        startActivity(new Intent(teacher_info.this, teacher_panel.class ));
+        finish();
+    }
 }

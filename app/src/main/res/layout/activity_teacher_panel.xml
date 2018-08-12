@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".teacher3">
+    tools:context=".teacher_panel">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="199dp"
+        android:layout_marginTop="216dp"
         android:text="@string/teacher_panel"
         android:textColor="#C9FBFA"
         android:textSize="18sp" />

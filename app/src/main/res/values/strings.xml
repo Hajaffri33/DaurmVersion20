@@ -39,6 +39,7 @@
     <string name="room_3">Room 3</string>
     <string name="todo">TODO</string>
     <string name="unlock">Unlock</string>
+    <string name="skip">skip</string>
 
 
     <array name="dept">

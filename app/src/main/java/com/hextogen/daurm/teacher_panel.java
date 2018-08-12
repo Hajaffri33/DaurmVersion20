@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class teacher1 extends AppCompatActivity {
+public class teacher_panel extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -16,17 +16,17 @@ public class teacher1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.teacher1);
+        setContentView(R.layout.activity_teacher_panel);
 
         mAuth = FirebaseAuth.getInstance();
-       signout = findViewById(R.id.panel_signout);
+        signout = findViewById(R.id.panel_signout);
 
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 mAuth.signOut();
-                startActivity(new Intent(teacher1.this, MainActivity.class));
+                startActivity(new Intent(teacher_panel.this, MainActivity.class));
                 finish();
 
 

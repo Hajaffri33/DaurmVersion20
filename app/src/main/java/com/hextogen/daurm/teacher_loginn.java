@@ -77,7 +77,7 @@ public class teacher_loginn extends AppCompatActivity {
                                 Toast.makeText(teacher_loginn.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
 
-                                startActivity(new Intent(teacher_loginn.this, teacher_signup.class));
+                                startActivity(new Intent(teacher_loginn.this, teacher_info.class));
                                 finish();
                                 //add teacher panel here later (teacher 1 or 2 or 3)
 
