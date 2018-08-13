@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".teacher_panel">
+    tools:context=".teacher_timetable">
 
 
     <ImageView
@@ -31,74 +31,52 @@
 
     <Button
         android:id="@+id/monday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageView"
-        android:layout_marginStart="86dp"
+        android:layout_width="225dp"
+        android:layout_height="33dp"
+        android:layout_centerInParent="true"
+        android:onClick="monday"
         android:background="@drawable/custom_btn_bg"
-        android:text="Monday"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="86dp" />
+        android:text="Monday" />
 
     <Button
         android:id="@+id/tuesday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/imageView"
-        android:layout_marginEnd="79dp"
+        android:layout_width="225dp"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="267dp"
         android:background="@drawable/custom_btn_bg"
-        android:text="Tuesday"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="79dp" />
+        android:text="Tuesday" />
 
     <Button
         android:id="@+id/wednesday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="225dp"
+        android:layout_height="33dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/monday"
-        android:layout_marginBottom="169dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="217dp"
         android:background="@drawable/custom_btn_bg"
-        android:text="Wednesday"
-        android:layout_alignLeft="@+id/monday" />
+        android:text="wednesday" />
 
     <Button
         android:id="@+id/thursday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignStart="@+id/tuesday"
-        android:layout_alignTop="@+id/wednesday"
+        android:layout_width="225dp"
+        android:layout_height="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="167dp"
         android:background="@drawable/custom_btn_bg"
-        android:onClick="gotoLock"
-        android:text="Thursday"
-        android:layout_alignLeft="@+id/tuesday" />
+        android:text="thursday" />
 
     <Button
         android:id="@+id/friday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="225dp"
+        android:layout_height="33dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/monday"
-        android:layout_marginBottom="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="117dp"
         android:background="@drawable/custom_btn_bg"
-        android:onClick="gotoLock"
-        android:text="Friday"
-        android:layout_alignLeft="@+id/monday" />
-
-    <Button
-        android:id="@+id/saturday"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignStart="@+id/tuesday"
-        android:layout_alignTop="@+id/friday"
-        android:background="@drawable/custom_btn_bg"
-        android:onClick="gotoLock"
-        android:text="Saturday"
-        android:layout_alignLeft="@+id/tuesday" />
-
-
+        android:text="friday" />
 
 
 

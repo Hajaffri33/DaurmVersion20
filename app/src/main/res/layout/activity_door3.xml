@@ -25,7 +25,8 @@
         android:layout_centerHorizontal="true"
         android:text="LR - 303"
         android:textColor="#C9FBFA"
-        android:textSize="26sp" />
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/lock3_on"

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hextogen.daurm">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +30,9 @@
         <activity android:name=".student_panel" />
         <activity android:name=".teacher_timetable" />
         <activity android:name=".teacher_info" />
-        <activity android:name=".teacher_panel"></activity>
+        <activity android:name=".teacher_panel" />
+        <activity android:name=".monday" />
+        <activity android:name=".next_session"></activity>
     </application>
 
 </manifest>

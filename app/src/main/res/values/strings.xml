@@ -40,6 +40,10 @@
     <string name="todo">TODO</string>
     <string name="unlock">Unlock</string>
     <string name="skip">skip</string>
+    <string name="student_panel">Student Panel</string>
+    <string name="next_session">Next Session</string>
+    <string name="timetable">TimeTable</string>
+    <string name="sign_out">Sign out</string>
 
 
     <array name="dept">

@@ -76,10 +76,16 @@ public class teacher_panel extends AppCompatActivity {
             Toast.makeText(this, "Not your class", Toast.LENGTH_SHORT).show();
         }
 
-
-
-       //
-
     }
 
+
+    public void timetable(View view) {
+
+        startActivity(new Intent(teacher_panel.this, teacher_timetable.class));
+    }
+
+    public void next(View view) {
+
+        startActivity(new Intent(teacher_panel.this, next_session.class));
+    }
 }

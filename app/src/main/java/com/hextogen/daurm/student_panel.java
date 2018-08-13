@@ -35,4 +35,13 @@ public class student_panel extends AppCompatActivity {
             }
         });
     }
+
+    public void timetable(View view) {
+        startActivity(new Intent(student_panel.this, teacher_timetable.class));
+    }
+
+    public void next(View view) {
+
+        startActivity((new Intent(student_panel.this, next_session.class)));
+    }
 }

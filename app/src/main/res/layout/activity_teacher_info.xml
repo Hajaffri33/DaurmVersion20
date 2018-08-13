@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="233dp"
-        android:text="Teacher Information"
+        android:layout_marginTop="212dp"
+        android:text="Enter your Information for Once"
         android:textColor="#C9FBFA"
         android:textSize="18sp" />
 
@@ -33,13 +33,11 @@
         android:id="@+id/t_name"
         android:layout_width="312dp"
         android:layout_height="40dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="298dp"
+        android:layout_marginBottom="298dp"
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_username"
-        android:drawableStart="@drawable/ic_username"
-        android:ems="10"
         android:hint="Fullname"
         android:inputType="textPersonName" />
 
@@ -49,11 +47,9 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="269dp"
+        android:layout_marginBottom="273dp"
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_password"
-        android:drawableStart="@drawable/ic_password"
-        android:ems="10"
         android:hint="@string/ts_password"
         android:inputType="textPassword" />
 
@@ -63,11 +59,9 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="218dp"
+        android:layout_marginBottom="219dp"
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_password"
-        android:drawableStart="@drawable/ic_password"
-        android:ems="10"
         android:hint="@string/ts_cpassword"
         android:inputType="textPassword" />
 
@@ -77,24 +71,12 @@
         android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="162dp"
+        android:layout_marginBottom="166dp"
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_department"
-        android:ems="10"
         android:hint="designation"
         android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/t_info"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/custom_btn_bg"
-        android:onClick="submit"
-        android:text="Submit"
-        android:textSize="16sp" />
 
     <Spinner
         android:id="@+id/ts_spinner"
@@ -107,6 +89,18 @@
         android:entries="@array/dept"
         android:gravity="center" />
 
+    <Button
+        android:id="@+id/t_info"
+        android:layout_width="103dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:background="@drawable/custom_btn_bg"
+        android:onClick="submit"
+        android:text="Submit"
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/skip"
         android:layout_width="wrap_content"
@@ -114,9 +108,7 @@
         android:layout_alignBottom="@+id/t_info"
         android:layout_alignEnd="@+id/t_name"
         android:onClick="skip"
-
         android:text="skip"
-        android:textAllCaps="false"
         android:textColor="#C9FBFA"
         android:textSize="18sp"
         android:textStyle="italic"
