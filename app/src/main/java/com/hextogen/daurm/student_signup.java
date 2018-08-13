@@ -132,6 +132,7 @@ public class student_signup extends AppCompatActivity {
     public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
+
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@uogsialkot.edu.pk";
         pattern = Pattern.compile(EMAIL_PATTERN);
         matcher = pattern.matcher(email);
