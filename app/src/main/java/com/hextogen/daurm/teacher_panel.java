@@ -16,6 +16,7 @@ public class teacher_panel extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     Button signout;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +29,6 @@ public class teacher_panel extends AppCompatActivity {
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 mAuth.signOut();
                 startActivity(new Intent(teacher_panel.this, MainActivity.class));
                 finish();
@@ -51,6 +51,8 @@ public class teacher_panel extends AppCompatActivity {
 
         if (email.equals(mail1)) {
 
+
+
             startActivity(new Intent(teacher_panel.this, door1.class));
         } else if (email.equals(mail2)) {
 
@@ -64,6 +66,7 @@ public class teacher_panel extends AppCompatActivity {
         }
 
     }
+
 
 
     public void timetable(View view) {
