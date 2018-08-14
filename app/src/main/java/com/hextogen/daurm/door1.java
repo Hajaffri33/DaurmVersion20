@@ -1,5 +1,6 @@
 package com.hextogen.daurm;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
@@ -11,9 +12,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class door1 extends AppCompatActivity {
 
-
+    Timer timer;
     Button btn1, btn2;
     TextView text1;
     @Override
@@ -24,6 +28,15 @@ public class door1 extends AppCompatActivity {
         btn1 = findViewById(R.id.lock1_on);
         btn2 = findViewById(R.id.lock3_off);
         text1 = findViewById(R.id.textView5);
+        timer= new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent= new Intent(door1.this,door2.class);
+                startActivity(intent);
+            }
+
+        },5000);
 
         btn1.setOnClickListener(new View.OnClickListener()
         {
