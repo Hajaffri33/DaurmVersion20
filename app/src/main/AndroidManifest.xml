@@ -31,7 +31,6 @@
         <activity android:name=".teacher_timetable" />
         <activity android:name=".teacher_info" />
         <activity android:name=".teacher_panel" />
-        <activity android:name=".monday" />
         <activity android:name=".next_session"></activity>
     </application>
 
