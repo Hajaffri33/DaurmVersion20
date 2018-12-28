@@ -115,5 +115,21 @@
         android:layout_marginLeft="-105dp"
         android:layout_toRightOf="@+id/textView8" />
 
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="30dp"
+        android:id="@+id/update"
+        android:onClick="update"
+        android:layout_alignStart="@+id/time_table"
+        android:layout_alignLeft="@+id/time_table"
+        android:layout_alignTop="@+id/panel_signout"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/custom_btn_bg"
+        android:text="Update"
+        android:textSize="12sp"
+       />
+
 
 </RelativeLayout>

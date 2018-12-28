@@ -66,7 +66,7 @@ public class teacher_loginn extends AppCompatActivity {
                                 Toast.makeText(teacher_loginn.this, "Welcome"
                                         , Toast.LENGTH_SHORT).show();
 
-                                startActivity(new Intent(teacher_loginn.this, teacher_info.class));
+                                startActivity(new Intent(teacher_loginn.this, teacher_panel.class));
                                 finish();
 
 

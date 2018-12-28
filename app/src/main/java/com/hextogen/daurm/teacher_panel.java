@@ -33,11 +33,21 @@ public class teacher_panel extends AppCompatActivity {
                 startActivity(new Intent(teacher_panel.this, MainActivity.class));
                 finish();
 
-
             }
         });
+
+
     }
 
+
+    public  void update(View view){
+
+
+        startActivity(new Intent(teacher_panel.this, teacher_info.class));
+        finish();
+        onDestroy();
+
+    }
 
     public void gotoLock(View view) {
 

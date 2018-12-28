@@ -33,9 +33,10 @@
         android:id="@+id/monday"
         android:layout_width="225dp"
         android:layout_height="33dp"
-        android:layout_centerInParent="true"
-        android:onClick="monday"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:background="@drawable/custom_btn_bg"
+        android:onClick="monday"
         android:text="Monday" />
 
     <Button

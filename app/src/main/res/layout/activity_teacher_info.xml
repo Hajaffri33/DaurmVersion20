@@ -33,9 +33,9 @@
         android:id="@+id/t_name"
         android:layout_width="312dp"
         android:layout_height="40dp"
+        android:layout_alignStart="@+id/ts_pass"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="298dp"
+        android:layout_marginBottom="332dp"
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_username"
         android:hint="Fullname"
@@ -105,14 +105,14 @@
         android:id="@+id/skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/t_info"
         android:layout_alignEnd="@+id/t_name"
+        android:layout_alignRight="@+id/t_name"
+        android:layout_alignBottom="@+id/t_info"
         android:onClick="skip"
-        android:text="skip"
+        android:text="back"
         android:textColor="#C9FBFA"
         android:textSize="18sp"
-        android:textStyle="italic"
-        android:layout_alignRight="@+id/t_name" />
+        android:textStyle="italic" />
 
 
 </RelativeLayout>

@@ -17,6 +17,6 @@ public class teacher_timetable extends AppCompatActivity {
 
     public void monday(View view) {
 
-        startActivity(new Intent(teacher_timetable.this, monday.class));
+        startActivity(new Intent(teacher_timetable.this, MainActivity.class));
     }
 }
