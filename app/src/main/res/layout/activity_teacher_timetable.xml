@@ -35,6 +35,8 @@
         android:layout_height="33dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
+        android:layout_marginTop="321dp"
+        android:layout_marginEnd="93dp"
         android:background="@drawable/custom_btn_bg"
         android:onClick="monday"
         android:text="Monday" />

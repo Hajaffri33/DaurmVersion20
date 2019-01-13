@@ -51,5 +51,6 @@
         <item>Computer Science</item>
         <item>Software Engineering</item>
     </array>
+    <string name="title_activity_rooms">rooms</string>
 
 </resources>

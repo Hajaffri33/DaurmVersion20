@@ -40,7 +40,9 @@
         android:background="@drawable/custom_edittext_bg"
         android:drawableLeft="@drawable/ic_username"
         android:hint="Fullname"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:layout_alignLeft="@+id/ts_pass"
+        android:layout_marginLeft="1dp" />
 
     <EditText
         android:id="@+id/ts_pass"

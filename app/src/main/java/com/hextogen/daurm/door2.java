@@ -1,56 +1,108 @@
 package com.hextogen.daurm;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class door2 extends AppCompatActivity {
 
+    Timer timer;
+    Button btn1, btn2;
+    TextView text1, text2;
+    String state;
 
-    Button  btn3, btn4;
-    TextView text1,text2,text3;
+    FirebaseDatabase myDatabase;
+    DatabaseReference myRef;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_door2);
+        setContentView(R.layout.activity_door1);
 
-        btn3 = findViewById(R.id.lock2_on);
-        btn4 = findViewById(R.id.lock3_off);
-
+        btn1 = findViewById(R.id.lock1_on);
+        btn2 = findViewById(R.id.lock1_off);
         text1 = findViewById(R.id.textView5);
+        text2 = findViewById(R.id.text);
+
+        myDatabase = FirebaseDatabase.getInstance();
+        myRef      = myDatabase.getReference("room");
+
+        myRef.child("302").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                state = dataSnapshot.child("state").getValue(String.class);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
-        btn3.setOnClickListener(new View.OnClickListener()
+        btn1.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
 
                 request("/LOCK2=Locked");
-                text1.setText("UNLOCKED");
+                myRef.child("302").child("state").setValue("Locked");
+                text1.setText("Locked");
 
 
             }
         });
-        btn4.setOnClickListener(new View.OnClickListener()
+        btn2.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view) {
 
                 request("/LOCK2=Unlocked");
-                text1.setText("LOCKED");
+                myRef.child("301").child("state").setValue("Unlocked");
+                text1.setText("Unlocked");
+                timer();
 
 
             }
         });
 
     }
+
+    public void timer(){
+
+        timer= new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                myRef.child("302").child("state").setValue("Locked");
+                Intent intent= new Intent(door2.this,teacher_panel.class);
+                startActivity(intent);
+            }
+
+        },10000);
+
+    }
+
 
     public void request(String command){
 

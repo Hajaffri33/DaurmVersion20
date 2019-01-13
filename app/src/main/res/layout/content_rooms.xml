@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".rooms">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/blur"
+        app:srcCompat="@drawable/blur" />
+
+    <TextView
+        android:id="@+id/TimeTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="224dp"
+        android:text="Select any Lecture Room"
+        android:textColor="#C9FBFA"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/lr301"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_btn_bg"
+        android:layout_centerVertical="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:onClick="goto301"
+        android:text="LR - 301"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/lr302"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_btn_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lr301"
+        android:layout_marginTop="20dp"
+        android:onClick="goto302"
+        android:text="LR - 302"
+        android:textSize="16dp"/>
+
+    <Button
+        android:id="@+id/lr303"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/custom_btn_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/lr302"
+        android:layout_marginTop="20dp"
+        android:onClick="goto303"
+        android:text="LR - 303"
+        android:textSize="16dp"/>
+
+    <TextView
+        android:id="@+id/goBackk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFC9FBFA"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:onClick="goback"
+        android:text="back"
+        android:textSize="18dp"/>
+
+
+
+
+</RelativeLayout>

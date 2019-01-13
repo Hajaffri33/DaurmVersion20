@@ -43,7 +43,7 @@ public class teacher_panel extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        myRef = mFirebaseDatabase.getReference();
+        myRef = mFirebaseDatabase.getReference("teacher");
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
 
@@ -65,12 +65,14 @@ public class teacher_panel extends AppCompatActivity {
             }
         };
 
-        myRef.addValueEventListener(new ValueEventListener() {
+        myRef.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                showData(dataSnapshot);
+
+                String name = dataSnapshot.child("t_name").getValue(String.class);
+                t_panel.setText(name);
             }
 
             @Override
@@ -90,22 +92,6 @@ public class teacher_panel extends AppCompatActivity {
             }
         });
 
-
-    }
-
-    private void showData(DataSnapshot dataSnapshot) {
-        for(DataSnapshot ds : dataSnapshot.getChildren()){
-            teacher_db_values tinfo = new teacher_db_values();
-            tinfo.setT_name(ds.child(userID).getValue(teacher_db_values.class).getT_name()); //set the name
-            tinfo.setEmail(ds.child(userID).getValue(teacher_db_values.class).getEmail()); //set the email
-
-            //display all the information
-            Log.d("Name", "showData: name: " + tinfo.getT_name());
-            Log.d("Ëmail", "showData: email: " + tinfo.getEmail());
-
-            t_panel.setText(tinfo.getT_name());
-
-        }
     }
 
 
@@ -113,12 +99,12 @@ public class teacher_panel extends AppCompatActivity {
 
         startActivity(new Intent(teacher_panel.this, teacher_info.class));
         finish();
-        onDestroy();
+
     }
 
     public void gotoLock(View view) {
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+       /* FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String mail1 = "asifkhan@uogsialkot.edu.pk";
         String mail2 = "ad@uogsialkot.edu.pk";
 
@@ -132,13 +118,16 @@ public class teacher_panel extends AppCompatActivity {
         } else if (email.equals(mail2)) {
 
             startActivity(new Intent(teacher_panel.this, door1.class));
-        } /*else if (email.equals(mail3)) {
+        } else if (email.equals(mail3)) {
 
             startActivity(new Intent(teacher_panel.this, door2.class));
-        } */ else {
+        }  else {
 
             Toast.makeText(this, "Not your class", Toast.LENGTH_SHORT).show();
-        }
+        }*/
+
+        startActivity(new Intent(teacher_panel.this, door1.class));
+
 
     }
 

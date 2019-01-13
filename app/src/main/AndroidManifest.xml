@@ -31,7 +31,11 @@
         <activity android:name=".teacher_timetable" />
         <activity android:name=".teacher_info" />
         <activity android:name=".teacher_panel" />
-        <activity android:name=".next_session"></activity>
+        <activity android:name=".next_session" />
+        <activity
+            android:name=".rooms"
+            android:label="@string/title_activity_rooms"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
