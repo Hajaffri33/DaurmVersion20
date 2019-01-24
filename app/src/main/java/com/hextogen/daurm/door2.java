@@ -80,7 +80,6 @@ public class door2 extends AppCompatActivity {
                 request("/LOCK2=Unlocked");
                 myRef.child("301").child("state").setValue("Unlocked");
                 text1.setText("Unlocked");
-                timer();
 
 
             }
