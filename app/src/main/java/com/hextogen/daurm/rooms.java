@@ -37,7 +37,9 @@ public class rooms extends AppCompatActivity {
         l303 = findViewById(R.id.lr303);
 
         mAuth = FirebaseAuth.getInstance();
-        Uid   = mAuth.getUid();
+        FirebaseUser user = mAuth.getCurrentUser();
+        Uid   = user.getUid();
+
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
 

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,13 +47,14 @@ public class door1 extends AppCompatActivity {
         text2 = findViewById(R.id.text);
 
         mAuth = FirebaseAuth.getInstance();
-        Uid   = mAuth.getUid();
+        FirebaseUser user = mAuth.getCurrentUser();
+        Uid   = user.getUid();
 
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
 
-        myRef.child("301").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("301").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
@@ -88,7 +90,7 @@ public class door1 extends AppCompatActivity {
                 myRef.child("301").child("state").setValue("Unlocked");
                 myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Unlocked");
-              // timer();
+                timer();
 
             }
         });
