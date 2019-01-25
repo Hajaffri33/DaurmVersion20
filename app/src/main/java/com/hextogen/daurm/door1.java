@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,8 +28,9 @@ public class door1 extends AppCompatActivity {
     Timer timer;
     Button btn1, btn2;
     TextView text1, text2;
-    String state;
+    String state, Uid;
 
+    FirebaseAuth mAuth;
     FirebaseDatabase myDatabase;
     DatabaseReference myRef;
 
@@ -42,6 +44,10 @@ public class door1 extends AppCompatActivity {
         btn2 = findViewById(R.id.lock1_off);
         text1 = findViewById(R.id.textView5);
         text2 = findViewById(R.id.text);
+
+        mAuth = FirebaseAuth.getInstance();
+        Uid   = mAuth.getUid();
+
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
@@ -67,6 +73,7 @@ public class door1 extends AppCompatActivity {
 
                 request("/LOCK1=Locked");
                 myRef.child("301").child("state").setValue("Locked");
+                myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Locked");
 
 
@@ -79,8 +86,9 @@ public class door1 extends AppCompatActivity {
 
                 request("/LOCK1=Unlocked");
                 myRef.child("301").child("state").setValue("Unlocked");
+                myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Unlocked");
-
+              // timer();
 
             }
         });
@@ -93,7 +101,9 @@ public class door1 extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
+                request("/LOCK1=Locked");
                 myRef.child("301").child("state").setValue("Locked");
+                text1.setText("Locked");
                 Intent intent= new Intent(door1.this,teacher_panel.class);
                 startActivity(intent);
             }
@@ -111,7 +121,7 @@ public class door1 extends AppCompatActivity {
 
         if(networkInfo != null && networkInfo.isConnected()){
 
-            String url = "http://192.168.1.100/";
+            String url = "http://192.168.43.146/";
 
             new RequestedData().execute(url+command);
         }

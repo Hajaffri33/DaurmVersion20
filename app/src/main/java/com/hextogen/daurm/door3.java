@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,8 +28,9 @@ public class door3 extends AppCompatActivity {
     Timer timer;
     Button btn1, btn2;
     TextView text1, text2;
-    String state;
+    String state, Uid;
 
+    FirebaseAuth mAuth;
     FirebaseDatabase myDatabase;
     DatabaseReference myRef;
 
@@ -36,12 +38,15 @@ public class door3 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_door1);
+        setContentView(R.layout.activity_door3);
 
         btn1 = findViewById(R.id.lock1_on);
         btn2 = findViewById(R.id.lock1_off);
         text1 = findViewById(R.id.textView5);
         text2 = findViewById(R.id.text);
+
+        mAuth = FirebaseAuth.getInstance();
+        Uid   = mAuth.getUid();
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
@@ -67,6 +72,7 @@ public class door3 extends AppCompatActivity {
 
                 request("/LOCK3=Locked");
                 myRef.child("303").child("state").setValue("Locked");
+                myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Locked");
 
 
@@ -79,6 +85,7 @@ public class door3 extends AppCompatActivity {
 
                 request("/LOCK3=Unlocked");
                 myRef.child("303").child("state").setValue("Unlocked");
+                myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Unlocked");
 
 
@@ -111,7 +118,7 @@ public class door3 extends AppCompatActivity {
 
         if(networkInfo != null && networkInfo.isConnected()){
 
-            String url = "http://192.168.1.100/";
+            String url = "http://192.168.43.146/";
 
             new RequestedData().execute(url+command);
         }

@@ -67,7 +67,6 @@ public class teacher_loginn extends AppCompatActivity {
                                         , Toast.LENGTH_SHORT).show();
 
                                 startActivity(new Intent(teacher_loginn.this, teacher_panel.class));
-                                onDestroy();
                                 finish();
 
 
