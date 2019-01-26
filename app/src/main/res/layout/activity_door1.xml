@@ -36,7 +36,7 @@
         android:layout_alignTop="@+id/lock1_on"
         android:layout_marginEnd="71dp"
         android:background="@drawable/custom_btn_bg"
-        android:text="Unlock"
+        android:text="Lock"
         android:layout_marginRight="71dp"
         android:layout_alignParentRight="true" />
 
@@ -49,7 +49,7 @@
         android:layout_marginBottom="160dp"
         android:layout_marginStart="75dp"
         android:background="@drawable/custom_btn_bg"
-        android:text="Lock"
+        android:text="Unlock"
         android:layout_marginLeft="75dp"
         android:layout_alignParentLeft="true" />
 
@@ -63,6 +63,19 @@
         android:text="Locked"
         android:textColor="#C9FBFA"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="back"
+        android:textColor="#C9FBFA"
+        android:textSize="20sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:onClick="back"
+        />
 
 
 </RelativeLayout>

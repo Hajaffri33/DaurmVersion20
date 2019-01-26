@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".mon">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#C9FBFA"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        android:textSize="25dp"
+        android:text="Monday" />
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="25dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/room1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="18dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/batch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="15dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="25dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/room2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="18dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/batch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp"
+        android:layout_marginLeft="20dp"
+        android:textColor="#C9FBFA"
+        android:textSize="15dp"
+        android:text="TextView" />
+
+
+
+</RelativeLayout>

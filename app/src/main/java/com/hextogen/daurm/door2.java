@@ -26,12 +26,11 @@ import java.util.TimerTask;
 
 public class door2 extends AppCompatActivity {
 
-    Timer timer;
+    Timer timer = new Timer();
     Button btn1, btn2;
     TextView text1, text2;
     String state, Uid;
 
-    FirebaseAuth mAuth;
     FirebaseDatabase myDatabase;
     DatabaseReference myRef;
 
@@ -46,9 +45,8 @@ public class door2 extends AppCompatActivity {
         text1 = findViewById(R.id.textView5);
         text2 = findViewById(R.id.text);
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        Uid   = user.getUid();
+       FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Uid   = currentUser.getUid();
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
@@ -73,9 +71,10 @@ public class door2 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK2=Locked");
-                myRef.child("302").child("state").setValue("Locked");
-                myRef.child("301").child("id").setValue(Uid);
-                text1.setText("Locked");
+                myRef.child("302").child("state").setValue("Unlocked");
+                myRef.child("302").child("id").setValue(Uid);
+                text1.setText("Unlocked");
+                timer();
 
 
             }
@@ -86,9 +85,10 @@ public class door2 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK2=Unlocked");
-                myRef.child("302").child("state").setValue("Unlocked");
-                myRef.child("301").child("id").setValue(Uid);
-                text1.setText("Unlocked");
+                myRef.child("302").child("state").setValue("Locked");
+                myRef.child("302").child("id").setValue(Uid);
+                text1.setText("Locked");
+                stopTimer();
 
 
             }
@@ -98,7 +98,6 @@ public class door2 extends AppCompatActivity {
 
     public void timer(){
 
-        timer= new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -108,7 +107,11 @@ public class door2 extends AppCompatActivity {
             }
 
         },10000);
+    }
 
+    public  void stopTimer(){
+
+        timer.cancel();
     }
 
 
@@ -129,6 +132,12 @@ public class door2 extends AppCompatActivity {
         }
     }
 
+    public void back(View view) {
+
+        Intent intent= new Intent(door2.this,rooms.class);
+        startActivity(intent);
+        finish();
+    }
 
 
     private class RequestedData extends AsyncTask<String, Void, String> {
@@ -138,5 +147,10 @@ public class door2 extends AppCompatActivity {
             return connection.getData(url[0]);
         }
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 }

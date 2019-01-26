@@ -26,12 +26,11 @@ import java.util.TimerTask;
 
 public class door1 extends AppCompatActivity {
 
-    Timer timer;
+    Timer timer = new Timer();
     Button btn1, btn2;
     TextView text1, text2;
     String state, Uid;
 
-    FirebaseAuth mAuth;
     FirebaseDatabase myDatabase;
     DatabaseReference myRef;
 
@@ -46,19 +45,18 @@ public class door1 extends AppCompatActivity {
         text1 = findViewById(R.id.textView5);
         text2 = findViewById(R.id.text);
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        Uid   = user.getUid();
-
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Uid   = currentUser.getUid();
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
 
-        myRef.child("301").addValueEventListener(new ValueEventListener() {
+        myRef.child("301").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 state = dataSnapshot.child("state").getValue(String.class);
+
             }
 
             @Override
@@ -74,9 +72,10 @@ public class door1 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK1=Locked");
-                myRef.child("301").child("state").setValue("Locked");
+                myRef.child("301").child("state").setValue("Unlocked");
                 myRef.child("301").child("id").setValue(Uid);
-                text1.setText("Locked");
+                text1.setText("Unlocked");
+                timer();
 
 
             }
@@ -87,32 +86,35 @@ public class door1 extends AppCompatActivity {
             public void onClick(View view) {
 
                 request("/LOCK1=Unlocked");
-                myRef.child("301").child("state").setValue("Unlocked");
+                myRef.child("301").child("state").setValue("Locked");
                 myRef.child("301").child("id").setValue(Uid);
-                text1.setText("Unlocked");
-                timer();
+                text1.setText("Locked");
+                stopTimer();
 
             }
         });
 
     }
 
+
     public void timer(){
 
-        timer= new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                request("/LOCK1=Locked");
                 myRef.child("301").child("state").setValue("Locked");
-                text1.setText("Locked");
                 Intent intent= new Intent(door1.this,teacher_panel.class);
                 startActivity(intent);
             }
 
         },10000);
-
     }
+
+    public  void stopTimer(){
+
+        timer.cancel();
+    }
+
 
 
     public void request(String command){
@@ -132,6 +134,12 @@ public class door1 extends AppCompatActivity {
         }
     }
 
+    public void back(View view) {
+
+        Intent intent= new Intent(door1.this,rooms.class);
+        startActivity(intent);
+        finish();
+    }
 
 
     private class RequestedData extends AsyncTask<String, Void, String> {
@@ -141,5 +149,10 @@ public class door1 extends AppCompatActivity {
             return connection.getData(url[0]);
         }
 
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 }

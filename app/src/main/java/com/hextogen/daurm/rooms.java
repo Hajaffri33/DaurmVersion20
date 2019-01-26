@@ -22,7 +22,6 @@ public class rooms extends AppCompatActivity {
 
     FirebaseDatabase myDatabase;
     DatabaseReference myRef;
-    FirebaseAuth mAuth;
     String lr301,lr302,lr303, Uid, Uid1,Uid2, Uid3;
     Button l301, l302, l303;
 
@@ -36,9 +35,8 @@ public class rooms extends AppCompatActivity {
         l302 = findViewById(R.id.lr302);
         l303 = findViewById(R.id.lr303);
 
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-        Uid   = user.getUid();
+       FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Uid   = currentUser.getUid();
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
@@ -54,7 +52,7 @@ public class rooms extends AppCompatActivity {
                 Uid2  = dataSnapshot.child("302").child("id").getValue(String.class);
 
                 lr303 = dataSnapshot.child("303").child("state").getValue(String.class);
-                Uid3  = dataSnapshot.child("302").child("id").getValue(String.class);
+                Uid3  = dataSnapshot.child("303").child("id").getValue(String.class);
 
             }
 
@@ -64,33 +62,6 @@ public class rooms extends AppCompatActivity {
             }
         });
 
-     /*   myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                lr302 = dataSnapshot.child("302").child("state").getValue(String.class);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                lr303 = dataSnapshot.child("303").child("state").getValue(String.class);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });  */
 
         l301.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,42 +138,6 @@ public class rooms extends AppCompatActivity {
     }
 
 
-   /* public void goto301(View view) {
-
-        if(lr301 == "Unlocked"){
-
-            Toast.makeText(this,"This room is currently unavailable", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Intent intent = new Intent(rooms.this, door1.class);
-            startActivity(intent);
-        }
-
-    }
-
-    public void goto302(View view) {
-
-        if(lr302 == "Unlocked"){
-
-            Toast.makeText(this,"This room is currently unavailable", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Intent intent = new Intent(rooms.this, door2.class);
-            startActivity(intent);
-        }
-    }
-
-    public void goto303(View view) {
-
-        if(lr303 == "Unlocked"){
-
-            Toast.makeText(this,"This room is currently unavailable", Toast.LENGTH_SHORT).show();
-        }
-        else{
-        Intent intent = new Intent(rooms.this, door3.class);
-        startActivity(intent);
-        }
-    } */
 
     public void goback(View view) {
 
