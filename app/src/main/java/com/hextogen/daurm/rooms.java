@@ -35,8 +35,8 @@ public class rooms extends AppCompatActivity {
         l302 = findViewById(R.id.lr302);
         l303 = findViewById(R.id.lr303);
 
-       FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        Uid   = currentUser.getUid();
+     /*  FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        Uid   = currentUser.getUid(); */
 
         myDatabase = FirebaseDatabase.getInstance();
         myRef      = myDatabase.getReference("room");
@@ -46,13 +46,13 @@ public class rooms extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 lr301 = dataSnapshot.child("301").child("state").getValue(String.class);
-                Uid1  = dataSnapshot.child("301").child("id").getValue(String.class);
+              //  Uid1  = dataSnapshot.child("301").child("id").getValue(String.class);
 
                 lr302 = dataSnapshot.child("302").child("state").getValue(String.class);
-                Uid2  = dataSnapshot.child("302").child("id").getValue(String.class);
+               // Uid2  = dataSnapshot.child("302").child("id").getValue(String.class);
 
                 lr303 = dataSnapshot.child("303").child("state").getValue(String.class);
-                Uid3  = dataSnapshot.child("303").child("id").getValue(String.class);
+               // Uid3  = dataSnapshot.child("303").child("id").getValue(String.class);
 
             }
 
@@ -67,13 +67,13 @@ public class rooms extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(Uid == Uid1){
+               /* if(Uid == Uid1){
 
                     Intent intent = new Intent(rooms.this, door1.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(lr301 == "Unlocked"){
+                else*/ if(lr301 == "Unlocked"){
 
                     Toast.makeText(rooms.this, "This room is currently unavaible", Toast.LENGTH_SHORT).show();
                 }
@@ -90,13 +90,13 @@ public class rooms extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(Uid == Uid2){
+              /*  if(Uid == Uid2){
 
                     Intent intent = new Intent(rooms.this, door2.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(lr302 == "Unlocked"){
+                else */ if(lr302 == "Unlocked"){
 
                     Toast.makeText(rooms.this, "This room is currently unavaible", Toast.LENGTH_SHORT).show();
                 }
@@ -113,13 +113,13 @@ public class rooms extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(Uid == Uid3){
+              /*  if(Uid == Uid3){
 
                     Intent intent = new Intent(rooms.this, door3.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(lr303 == "Unlocked"){
+                else  */ if(lr303 == "Unlocked"){
 
                     Toast.makeText(rooms.this, "This room is currently unavaible", Toast.LENGTH_SHORT).show();
                 }

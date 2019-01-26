@@ -75,7 +75,7 @@ public class door1 extends AppCompatActivity {
                 myRef.child("301").child("state").setValue("Unlocked");
                 myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Unlocked");
-                timer();
+              //  timer();
 
 
             }
@@ -89,7 +89,7 @@ public class door1 extends AppCompatActivity {
                 myRef.child("301").child("state").setValue("Locked");
                 myRef.child("301").child("id").setValue(Uid);
                 text1.setText("Locked");
-                stopTimer();
+              //  stopTimer();
 
             }
         });
